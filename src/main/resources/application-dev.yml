@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tibia_genius_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: admin-brad
+    password: password-brad
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+application:
+  security:
+    jwt:
+      secret-key: 1b49fba48c0a055acfafacb4546d57fd700690ceb7971e3c171a60dcb09a85a1b5100d78051971decb50f6f3c25473550c2f5ff76151846f6eb546fb28c765b8
+      expiration: 86400000
+    mailing:
+      frontend:
+        activation-url: http://localhost:3000/activate-account
